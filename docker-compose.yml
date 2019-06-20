@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    planner:
+        image: iotplannerl1
+        ports:
+            - "8093:8080"
+        volumes:
+            - ./config:/tmp/config
+        network_mode: host
+        command: "planner1 application.json --server.port=8093"    
